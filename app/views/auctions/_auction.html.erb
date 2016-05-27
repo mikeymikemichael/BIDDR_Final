@@ -1,0 +1,25 @@
+<body>
+
+  <table>
+
+    <% obj.each do |auction| %>
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="well well-lg">
+          <div class="auction-item">
+            <%= link_to auction.item, auction_path(auction) %>
+            <h5 class="center"><strong>Details:</strong> <%= auction.details %></h5>
+            <h5 class="center"><strong>Reserve Price:</strong> <%= auction.reserve_price %></h5>
+            <h5 class="center"><strong>End Date:</strong> <%= auction.end_date %></h5>
+          </div>
+          <div>
+
+          </div>
+          <div>
+            <%= link_to 'Bid', auction_path(auction), class: "btn btn-sm btn-success" %>
+          </div>
+      <td></td>
+
+    <% end %>
+
+</body>

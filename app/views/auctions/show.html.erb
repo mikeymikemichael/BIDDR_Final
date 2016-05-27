@@ -1,0 +1,33 @@
+<h2 align="center">Item: <%= @auction.item %></h2>
+<div class="well col-xs-8 col-xs-offset-2">
+  <h4 class="center"><strong>Details:</strong></h4>
+  <hr>
+  <%= simple_format(@auction.details) %>
+  <hr>
+  <h4 class="center"><strong>Reserve Price:</strong></h4>
+  <%= @auction.reserve_price %>
+  <hr>
+  <h4 class="center"><strong>End Date:</strong></h4>
+  <hr>
+  <hr>
+  <h4 class="center"><strong>Bid:</strong></h4>
+  <div>
+    <%= simple_form_for[@auction, @bid] do |f| %>
+    <%= f.input :amount %>
+    <%= f.submit class: 'btn btn-success btn-lg' %>
+
+  </div>
+
+
+
+  <hr>
+  <div class="auction-actions">
+    <%= link_to "Back to Auction listings", auctions_path %>
+  </div>
+</div>
+
+
+
+<!-- <p>
+  End Date: <%= @auction.end_date %>
+</p> -->
